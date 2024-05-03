@@ -1,4 +1,4 @@
-name: Github Action demo
+name: setup-node demo
 on: [push]
 jobs: 
   Check-Github-Actions:
