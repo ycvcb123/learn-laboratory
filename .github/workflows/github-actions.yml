@@ -1,0 +1,19 @@
+name: Github Action demo
+on: [push]
+jobs: 
+  Check-Github-Actions:
+    runs-on: ubuntu-latest
+    steps: 
+      - uses: actions/checkout@v2
+        with:
+          repository: ycvcb123/share-system
+      - name: List files in the repo
+        run: | 
+          ls ${{github.workspace}}
+
+      - uses: actions/setup-node@v2
+        with: 
+          node-version: 16
+      - run: node -v
+      - run: npm i typescript -g
+      - run: tsc -v
