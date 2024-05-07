@@ -1,0 +1,16 @@
+version: '3'
+services: 
+  jenkins: 
+    container_name: 'jenkins_winsonye'
+    image: jenkins/jenkins:2.321
+    restart: always
+    user: jenkins:994
+    ports: 
+    - "10050:8080"
+    - "50000:50000"
+    - "10051:10051"
+    volumes:
+    - /home/jenkins/data:/var/jenkins_home
+    - /usr/bin/docker:/usr/bin/docker
+    - /var/run/docker.sock:/var/run/docker.sock
+  
